@@ -1,13 +1,9 @@
 
 package projpackage;
 
-import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import javax.swing.*;
 
 public class JanelaPrincipal extends JFrame {
@@ -48,7 +44,10 @@ public class JanelaPrincipal extends JFrame {
             txt.setText("");
             SwingUtilities.invokeLater(new Runnable() {
                 public void run() {
-                    SwingConsole.runNoSize(proggg.js = new JanelaSec());
+                    if (proggg.js == null)
+                        SwingConsole.runNoSize(proggg.js = new JanelaSec());
+                    else
+                        proggg.js.setVisible(true);
                 }
             });
         }

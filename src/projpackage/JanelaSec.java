@@ -30,9 +30,19 @@ public class JanelaSec extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
 
-        jButton1.setText("jButton1");
+        jButton1.setText("save");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveString(evt);
+            }
+        });
 
-        jButton2.setText("jButton2");
+        jButton2.setText("load");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loadString(evt);
+            }
+        });
 
         jTextField1.setText("jTextField1");
 
@@ -65,6 +75,17 @@ public class JanelaSec extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void saveString(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveString
+        savedString = jTextField1.getText();
+        jTextField1.setText("");
+        System.out.println("string saved");
+    }//GEN-LAST:event_saveString
+
+    private void loadString(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadString
+        jTextField1.setText(savedString);
+        System.out.println("string loaded");
+    }//GEN-LAST:event_loadString
 
     /**
      * @param args the command line arguments
@@ -105,4 +126,6 @@ public class JanelaSec extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+    public String savedString;
+    
 }
